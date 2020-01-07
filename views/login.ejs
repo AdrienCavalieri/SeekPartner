@@ -1,0 +1,18 @@
+<% include partials/header %>
+
+        <div class="ui form one column stackable center aligned page grid">
+            <form action="" method="post">
+                <h1>Connexion</h1>
+                <div class="field">
+                    <label>Pseudonyme<input type="text" name="pseudo"/></label><br/>
+                    <label>Mot de passe<input type="password" name="password"/></label><br/>
+                    <label>Afficher le mot de passe <input type="checkbox" name="show_password"></label><br/>
+                </div>
+                <input class="ui big primary button" type="submit" name="send" value="Envoyer"/>
+                <input class="ui big button" type="reset" name="reset" value="Réinitialiser"/>
+            </form>
+            <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+            <script src="/js/form.js"></script>
+        </div>
+
+<% include partials/footer %>

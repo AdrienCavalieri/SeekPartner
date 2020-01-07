@@ -1,0 +1,33 @@
+<% include partials/header %>
+
+        <div class="ui form one column stackable center aligned page grid">
+            <form action="" method="post" class="ui form">
+                <h1>Modification du profil</h1>
+                <p>Entrez votre mot de passe courant (ou changez-le) pour valider la modification d'un ou plusieurs champs. </p>
+                <div class="field">
+                    <label>Sexe
+                        <select name="sex" >
+                            <option value="F" <% if (user.sex === 'F') { %> selected <% } %>>Femme</option>
+                            <option value="M" <% if (user.sex === 'M') { %> selected <% } %>>Homme</option>
+                            <option value=""  <% if (user.sex === '') { %> selected <% } %>>N/A</option>
+                        </select>
+                    </label><br/>
+                    <label>Mot de passe<input type="password" name="password"/></label><br/>
+                    <label>Confirmation du mot de passe<input type="password" name="password_confirmation"/></label><br/>
+                    <label>Afficher le mot de passe <input type="checkbox" name="show_password"></label><br/>
+                    <label>Date de naissance<input type="date" name="date_of_birth" value="<%= user.date_of_birth %>"/></label><br/>
+                    <label>Lien de l'avatar<input type="text" name="profile_image" value="<%= user.profile_image %>"/></label><br/>
+                    <label>Description (entre 0 et 255 caractères)<textarea name="description" maxlength="255"><%= user.description %></textarea></label><br/>
+                    <label>Jeux favoris</label>
+                    <% for (var game in games){ %>
+                        <input type="checkbox" name="favorite_games" value="<%= games[game].game_id %>" <% for (var user_selected_game in user_selected_games) if (games[game].game_title === user_selected_games[user_selected_game].game_title) { %> checked <% } %>/> <%= games[game].game_title %><br/>
+                    <% } %>
+                </div>
+                <input class="ui big primary button" type="submit" name="send" value="Envoyer"/>
+                <input class="ui big button" type="reset" name="reset" value="Réinitialiser"/>
+            </form>
+            <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+            <script src="/js/form.js"></script>
+        </div>
+
+<% include partials/footer %>

@@ -1,0 +1,28 @@
+<!doctype>
+<html>
+  <head>
+    <title>SeekPartner</title>
+    <meta charset="utf8"/>
+    <link href="/semantic/semantic.min.css" rel="stylesheet"/>
+    <style>
+        .main.container{
+            margin-top: 7em;
+        }
+    </style>
+  </head>
+  <body>
+    <header class="ui fixed inverted menu">
+        <a class="header item" href="/">Accueil</a>
+        <a class="header item" href="/meet">Rencontrer</a>
+        <% if (typeof user_id != 'undefined') { %>
+            <a class="header item" href="/profile/<%= user_id %>/likes">Likes</a>
+            <a class="header item" href="/profile/<%= user_id %>/matches">Matches</a>
+            <a class="header item" href="/profile/<%= user_id %>">Profil</a>
+            <a class="header item" href="/profile/<%= user_id %>/edit">Options</a>
+            <a class="header item" href="/profile/<%= user_id %>/logout">Se déconnecter</a>
+        <% } else { %>
+            <a class="header item" href="/register">Inscription</a>
+            <a class="header item" href="/login" >Connexion</a>
+        <% } %>
+    </header>
+    <div class="ui main container">

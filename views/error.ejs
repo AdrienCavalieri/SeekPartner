@@ -1,0 +1,15 @@
+<% include partials/header %>
+
+    <div class="ui large negative message">
+        <div class="header">
+            <%= error_code %>
+        </div>
+        <p><%= error_message %></p>
+    </div>
+    <script>
+        setTimeout(function () {
+            window.location = "/";
+        }, 2000)
+    </script>
+
+<% include partials/footer %>

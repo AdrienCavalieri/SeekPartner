@@ -1,0 +1,15 @@
+<% include partials/header %>
+
+    <div class="ui large positive message">
+        <div class="header">
+            Succès !
+        </div>
+        <p><%= msg %></p>
+    </div>
+    <script>
+        setTimeout(function () {
+            window.location = "/";
+        }, 2000)
+    </script>
+
+<% include partials/footer %>

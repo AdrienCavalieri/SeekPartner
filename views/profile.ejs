@@ -1,0 +1,27 @@
+<% include partials/header %>
+
+    <h1><%= user.pseudo %></h1>
+    <% if (typeof user_id != 'undefined' && user.user_id != user_id) { %>
+        <form action="" method="post">
+            <input class="ui negative basic button right floated" type="submit" name="dislike" value="Dislike"/>
+            <input class="ui positive basic button right floated" type="submit" name="like" value="Like"/>
+        </form>
+    <% } %>
+    <p><%= user.description %></p>
+    <img src=<%= user.image %> height="128" width="128">
+    <h2>Informations personnelles</h2>
+    <ul>
+        <li>Sexe : <%= user.sex %></li>
+        <li>Age : <%= user.date_of_birth %></li>
+        <li>Date d'inscription : <%= user.registration_date %></li>
+    </ul>
+    <% if (games.length > 0) { %>
+        <h2>Jeu(x) favori(s)</h2>
+        <ul>
+        <% for (var line in games){ %>
+            <li><%= games[line].game_title %></li>
+        <% } %>
+        </ul>
+    <% } %>
+
+<% include partials/footer %>

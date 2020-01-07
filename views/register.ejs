@@ -1,0 +1,27 @@
+<% include partials/header %>
+
+        <div class="ui form one column stackable center aligned page grid">
+            <form action="" method="post" class="ui form">
+                <h1>Inscription</h1>
+                <div class="field">
+                    <label>Sexe
+                        <select name="sex">
+                            <option value="F">Femme</option>
+                            <option value="M">Homme</option>
+                            <option value="">N/A</option>
+                        </select>
+                    </label><br/>
+                    <label>Pseudonyme (entre 3 et 15 caractères)<input type="text" name="pseudo"/></label><br/>
+                    <label>Mot de passe<input type="password" name="password"/></label><br/>
+                    <label>Confirmation du mot de passe<input type="password" name="password_confirmation"/></label><br/>
+                    <label>Afficher le mot de passe <input type="checkbox" name="show_password"></label><br/>
+                    <label>Date de naissance<input type="date" name="date_of_birth"/></label><br/>
+                </div>
+                <input class="ui big primary button" type="submit" name="send" value="Envoyer"/>
+                <input class="ui big button" type="reset" name="reset" value="Réinitialiser"/>
+            </form>
+            <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+            <script src="/js/form.js"></script>
+        </div>
+
+<% include partials/footer %>

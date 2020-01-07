@@ -1,0 +1,22 @@
+<% include partials/header %>
+
+        <div class="ui form one column stackable center aligned page grid">
+        <% for (var user in users){ %>
+            <div class="ui card">
+                <div class="image">
+                    <img height="128" width="128" src="<%= users[user].profile_image %>">
+                </div>
+                <div class="content">
+                    <a class="header" href="/profile/<%= users[user].user_id %>"><%= users[user].pseudo %></a>
+                    <div class="meta">
+                        <span class="date"> Inscrit(e) depuis le <%= users[user].registration_date %></span>
+                    </div>
+                    <div class="description">
+                        <%= users[user].user_description %>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+        </div>
+
+<% include partials/footer %>
